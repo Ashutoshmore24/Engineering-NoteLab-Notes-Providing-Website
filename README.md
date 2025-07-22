@@ -51,9 +51,9 @@ Welcome to **NotesLab**, your one-stop platform for accessing high-quality notes
 
 ---
 
-## 📦 Github Repository
+## Live Demo
 
-View Live : https://ashutoshmore24.github.io/Engineering-NoteLab-Notes-Providing-Website/
+View Live : https://enggnotelab.netlify.app/
 
 ---
 
