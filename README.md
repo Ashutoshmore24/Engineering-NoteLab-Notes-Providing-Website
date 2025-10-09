@@ -41,7 +41,7 @@ Welcome to **NotesLab**, your one-stop platform for accessing high-quality notes
   
 ---
 
-## ✍️ Authors
+## Authors
 
 -Ashutosh More
 
@@ -57,9 +57,10 @@ View Live : https://enggnotelab.netlify.app/
 
 ---
 
-## 📄 License
+## License
 
 This project is open-source and available under the MIT License.
 
 
-## 👃Thank You for Visiting !!!
+## Thank You for Visiting !!!
+
