@@ -1,75 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subjects - NotesLab</title>
-    <link rel="stylesheet" href="subject.style.css">
+    <title>Exam Preparation - NotesLab</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-    <header>
-        <div class="navbar">
-            <h1>NotesLab</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="subject.html">Subjects</a></li>
-                    <li><a href="exam_prep.html">Exam Prep</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="login.html">Log in</a></li>
-                </ul>
-            </nav>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">NotesLab.</a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="subject.html">Subjects</a>
+            <a href="exam_prep.html" class="active">Exam Prep</a>
+            <a href="about.html">About</a>
+            <a href="login.html" class="btn-login">Log in</a>
+        </div>
+
+        <div class="theme-switch-wrapper">
+            <button id="theme-toggle" class="theme-btn" title="Switch Theme">
+                <i class="fas fa-palette"></i>
+            </button>
+            <div class="theme-options">
+                <div class="theme-option" data-color="blue" style="background: #3b82f6;"></div>
+                <div class="theme-option" data-color="yellow" style="background: #eab308;"></div>
+                <div class="theme-option" data-color="black" style="background: #000;"></div>
+            </div>
+        </div>
+
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero" style="min-height: 40vh; padding-top: 100px;">
+        <div class="hero-content fade-in">
+            <h1>Exam <span>Preparation</span></h1>
+            <p>Previous Year Questions (PYQs) and Important Topics.</p>
         </div>
     </header>
-    
-    <section id="subjects" class="subjects">
-        <h2>Get SA Exam Previous Year Papers !</h2>
-        <div class="subject-cards">
-            <div class="card">
-                
-                <h3>Multivariate Calculus</h3>
-                <a href="Multivariate Calculus , May - 2024.pdf">Download</a>
-            </div>
-            <div class="card">
-             
-                <h3>DELD</h3>
-                <a href="DELD Nov 2024.pdf">Download</a>
-            </div>
-            <div class="card">
-             
-                <h3>LAUC</h3>
-                <a href="LAUC Nov 2024.pdf">Download</a>
-            </div>
-            <div class="card">
-               
-                <h3>Engineering Chemistry</h3>
-                <a href="Engg Chemistry Nov 2024.pdf">Download</a>
-            </div>
-            <div class="card">
-             
-                <h3>Discrete Mathematics</h3>
-                <a href="Discrete Mathematics Nov 2024.pdf">Download</a>
-            </div>
-            <div class="card">
 
-                <h3>POPL</h3>
-                <a href="Principles of Programming Languages, May - 2024.pdf">Download</a>
+    <!-- PYQ Grid -->
+    <section class="departments">
+        <div class="department-grid">
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h3>2024 End Sem PYQ</h3>
+                    <p>First Year Engineering</p>
+                    <a href="assets/End Sem PYQ.pdf" download class="card-btn">Download PDF <i
+                            class="fas fa-download"></i></a>
+                </div>
             </div>
-            <div class="card">
-
-                <h3>Data Communication</h3>
-                <a href="Data Communication , May - 2024.pdf">Download</a>
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h3>2023 In Sem PYQ</h3>
+                    <p>Physics & Chemistry</p>
+                    <a href="assets/In sem PYQ of Phy and Chem.pdf" download class="card-btn">Download PDF <i
+                            class="fas fa-download"></i></a>
+                </div>
             </div>
-            <div class="card">
-                <h3>Engineering Physics</h3>
-                <a href="Engg. Physics , May - 2024.pdf">Download</a>
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h3>2022 End Sem PYQ</h3>
+                    <p>Mathematics I</p>
+                    <a href="assets/End Sem PYQ.pdf" download class="card-btn">Download PDF <i
+                            class="fas fa-download"></i></a>
+                </div>
             </div>
-            
+        </div>
     </section>
-    <hr>
-    
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 NotesLab. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="logo">NotesLab.</div>
+            <div class="social-links">
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> Ashutosh More</a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> Raj Singhania</a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> Himanshu Chawre</a>
+            </div>
+            <p class="copyright">&copy; 2025 NotesLab. Built with ❤️ by Ashutosh & Team.</p>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

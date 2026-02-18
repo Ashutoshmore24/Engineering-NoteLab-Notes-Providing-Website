@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - NotesLab</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .profile-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .profile-card {
+            width: 100%;
+            max-width: 500px;
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            background: var(--gradient-main);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        .profile-info {
+            text-align: left;
+            margin-top: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1.5rem;
+            border-radius: var(--radius-sm);
+        }
+
+        .info-group {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 0.5rem;
+        }
+
+        .info-group:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .info-value {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">NotesLab.</a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="subject.html">Subjects</a>
+            <a href="exam_prep.html">Exam Prep</a>
+            <a href="about.html">About</a>
+            <a href="login.html" class="btn-login">Log in</a>
+        </div>
+
+        <div class="theme-switch-wrapper">
+            <button id="theme-toggle" class="theme-btn" title="Switch Theme">
+                <i class="fas fa-palette"></i>
+            </button>
+            <div class="theme-options">
+                <div class="theme-option" data-color="blue" style="background: #3b82f6;"></div>
+                <div class="theme-option" data-color="yellow" style="background: #eab308;"></div>
+                <div class="theme-option" data-color="black" style="background: #000;"></div>
+            </div>
+        </div>
+
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="profile-card fade-in">
+            <div class="profile-avatar" id="profile-avatar">
+                <!-- Initials will go here -->
+            </div>
+            <h2 id="profile-name">User Name</h2>
+            <p id="profile-type" style="color: var(--text-muted);">Student</p>
+
+            <div class="profile-info">
+                <div class="info-group">
+                    <span class="info-label">Email Address</span>
+                    <span class="info-value" id="profile-email">user@example.com</span>
+                </div>
+                <div class="info-group">
+                    <span class="info-label">Account Type</span>
+                    <span class="info-value" id="profile-account-type">Standard</span>
+                </div>
+                <div class="info-group">
+                    <span class="info-label">Member Since</span>
+                    <span class="info-value" id="profile-joined">February 2025</span>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+                <button class="btn-secondary" style="flex: 1;" onclick="alert('Edit profile feature coming soon!')">Edit
+                    Profile</button>
+                <button class="btn-primary" style="flex: 1; background: var(--accent); border: none;"
+                    id="profile-logout">Log Out</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo">NotesLab.</div>
+            <div class="social-links">
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> Ashutosh More</a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> Raj Singhania</a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> Himanshu Chawre</a>
+            </div>
+            <p class="copyright">&copy; 2025 NotesLab. Built with ❤️ by Ashutosh & Team.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = JSON.parse(localStorage.getItem('noteslab-user'));
+            if (!user) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            document.getElementById('profile-name').textContent = user.name;
+            document.getElementById('profile-email').textContent = user.email;
+            document.getElementById('profile-account-type').textContent = user.type === 'google' ? 'Google Account' : 'Email Account';
+
+            // Set Avatar Initials
+            const initials = user.name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+            document.getElementById('profile-avatar').textContent = initials;
+
+            document.getElementById('profile-logout').addEventListener('click', () => {
+                localStorage.removeItem('noteslab-user');
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+
+</html>

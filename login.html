@@ -1,49 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
-    <link rel="stylesheet" href="login.css">
+    <title>Login - NotesLab</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .login-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 8rem 2rem 4rem;
+        }
+    </style>
 </head>
+
 <body>
-    <header>
-        <div class="navbar">
-            <h1>NotesLab</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="Subject.html">Subject</a></li>
-                    <li><a href="exam_prep.html">Exam Prep</a></li>
-                    <li><a href="login.html">Log in</a></li>
-                </ul>
-            </nav>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">NotesLab.</a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="subject.html">Subjects</a>
+            <a href="exam_prep.html">Exam Prep</a>
+            <a href="about.html">About</a>
+            <a href="login.html" class="active btn-login">Log in</a>
         </div>
-    </header>
-  
-    <div class="login-box">
-        <h2>Login</h2>
-        <form action="#" method="POST" autocomplete="off">
-            <div class="input-container">
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="password" id="password" placeholder="Password" required>
+
+        <div class="theme-switch-wrapper">
+            <button id="theme-toggle" class="theme-btn" title="Switch Theme">
+                <i class="fas fa-palette"></i>
+            </button>
+            <div class="theme-options">
+                <div class="theme-option" data-color="blue" style="background: #3b82f6;"></div>
+                <div class="theme-option" data-color="yellow" style="background: #eab308;"></div>
+                <div class="theme-option" data-color="black" style="background: #000;"></div>
             </div>
-            <div class="checkbox">
-                <input type="checkbox" id="remember">
-                <label for="remember">Remember me</label>
-            </div>
-            <div class="forgot">
-                <a href="#">Forgot Password</a>
-            </div>
-            <p>Don't have an account? <a href="#">Click here</a></p>
-            <div class="button">
-                <button type="submit">Log In</button>
-            </div>
-        </form>
-    </div>
+        </div>
+
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Login Form -->
+    <section class="login-section">
+        <div class="contact-form fade-in" style="width: 100%; max-width: 400px;">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Welcome Back</h2>
+            <form id="login-form" autocomplete="off">
+                <div class="form-group">
+                    <label style="display: block; margin-bottom: 0.5rem; color: var(--text-muted);">Email
+                        Address</label>
+                    <input type="email" id="login-email" class="form-control" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label style="display: block; margin-bottom: 0.5rem; color: var(--text-muted);">Password</label>
+                    <input type="password" id="login-password" class="form-control" placeholder="Enter your password"
+                        required>
+                </div>
+
+                <div
+                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; color: var(--text-muted); font-size: 0.9rem;">
+                    <label style="display: flex; align-items: center; gap: 0.5rem;">
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#" style="color: var(--primary);">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="submit-btn" style="margin-bottom: 1rem;">Log In</button>
+
+                <button type="button" class="google-btn" onclick="loginWithGoogle()">
+                    <i class="fab fa-google"></i> Log in with Google
+                </button>
+
+                <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 1.5rem;">
+                    Don't have an account? <a href="signup.html" style="color: var(--primary);">Sign up</a>
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 NotesLab. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="logo">NotesLab.</div>
+            <div class="social-links">
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> Ashutosh More</a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> Raj Singhania</a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> Himanshu Chawre</a>
+            </div>
+            <p class="copyright">&copy; 2025 NotesLab. Built with ❤️ by Ashutosh & Team.</p>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,107 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NotesLab - First Year Engineering</title>
+    <title>NotesLab - Premium Engineering Resources</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
+
     <!-- Navbar -->
-    <header>
-        <div class="navbar">
-            <h1>NotesLab</h1>
-            <nav aria-label="Main Navigation">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="subject.html">Subject</a></li>
-                    <li><a href="exam_prep.html">Exam Prep</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="login.html">Log in</a></li>
-                </ul>
-            </nav>
+    <nav class="navbar">
+        <a href="index.html" class="logo">NotesLab.</a>
+
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="subject.html">Subjects</a>
+            <a href="exam_prep.html">Exam Prep</a>
+            <a href="about.html">About</a>
+            <a href="login.html" class="btn-login">Log in</a>
+        </div>
+
+        <div class="theme-switch-wrapper">
+            <button id="theme-toggle" class="theme-btn" title="Switch Theme">
+                <i class="fas fa-palette"></i>
+            </button>
+            <div class="theme-options">
+                <div class="theme-option" data-color="blue" style="background: #3b82f6;"></div>
+                <div class="theme-option" data-color="yellow" style="background: #eab308;"></div>
+                <div class="theme-option" data-color="black" style="background: #000;"></div>
+            </div>
+        </div>
+
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content fade-in">
+            <h1>Ace Your <br><span>Engineering Exams</span></h1>
+            <p>Curated notes, PYQs, and resources for First Year Engineering. No fluff, just what you need to survive
+                and thrive.</p>
+
+            <div class="hero-btns">
+                <a href="#departments" class="btn-primary">Get Properties</a>
+                <a href="#about" class="btn-secondary">Read Our Story</a>
+            </div>
+
+            <div class="notification-banner">
+                <i class="fas fa-bell"></i>
+                <span><strong>New:</strong> Mathematics & Physics Phase II notes just uploaded!</span>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <pre></pre>
-            <h2 style="color: rgb(251, 250, 250);">Welcome to NotesLab!</h2>
-            <p>Your one-stop solution for your Engineering Notes!</p>
-            <a href="#departments" class="cta_btn">Explore Notes</a>
-        </div>
-        <div class="update">
-            <marquee behavior="scroll" direction="left" scrollamount="8" style="background: #09090987; color: #fbf9f9; padding: 8px;margin-top: 40px; font-weight: 500; font-size: 1.3rem; letter-spacing: 1.2px;">
-                📢 Important: New notes on Mathematics & Physics uploaded! Check them now. 📚
-            </marquee>
-        </div>
-    </section>
-
     <!-- Departments Section -->
     <section id="departments" class="departments">
-        <h2>Choose Your Department</h2>
-        <div class="department-cards">
-            <div class="card">
-                <img src="assets/cs.logo.jpeg" alt="CS Department">
-                <h3>CS Department</h3>
-                <a href="subject.cs.html" class="btn">View Notes</a>
+        <h2 class="section-title fade-in">Choose Department</h2>
+
+        <div class="department-grid">
+            <!-- CS Card -->
+            <div class="card fade-in">
+                <img src="assets/cs.logo.jpeg" alt="Computer Science" class="card-img">
+                <div class="card-content">
+                    <h3>Computer Science</h3>
+                    <p>Algorithms, Data Structures, and Core Computing concepts.</p>
+                    <a href="subject.cs.html" class="card-btn">View Resources <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
-            <div class="card">
-                <img src="assets/it.logo.jpeg" alt="IT Department">
-                <h3>IT Department</h3>
-                <a href="subject.it.html" class="btn">View Notes</a>
+
+            <!-- IT Card -->
+            <div class="card fade-in">
+                <img src="assets/it.logo.jpeg" alt="Information Technology" class="card-img">
+                <div class="card-content">
+                    <h3>Information Technology</h3>
+                    <p>Web Tech, Networking, and modern IT frameworks.</p>
+                    <a href="subject.it.html" class="card-btn">View Resources <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
-            <div class="card">
-                <img src="assets/entc.logo.jpeg" alt="ENTC Department">
-                <h3>ENTC Department</h3>
-                <a href="subject.entc.html" class="btn">View Notes</a>
+
+            <!-- ENTC Card -->
+            <div class="card fade-in">
+                <img src="assets/entc.logo.jpeg" alt="E&TC" class="card-img">
+                <div class="card-content">
+                    <h3>Electronics & TC</h3>
+                    <p>Circuits, Signals, and Communication Systems.</p>
+                    <a href="subject.entc.html" class="card-btn">View Resources <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
-            <div class="card">
-                <img src="assets/civil.logo.jpeg" alt="Civil Department">
-                <h3>Civil Department</h3>
-                <a href="subject.civil.html" class="btn">View Notes</a>
+
+            <!-- Civil Card -->
+            <div class="card fade-in">
+                <img src="assets/civil.logo.jpeg" alt="Civil Engineering" class="card-img">
+                <div class="card-content">
+                    <h3>Civil Engineering</h3>
+                    <p>Mechanics, Structures, and Construction Tech.</p>
+                    <a href="subject.civil.html" class="card-btn">View Resources <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
         </div>
     </section>
-    <hr>
 
     <!-- About Section -->
     <section id="about" class="about">
-        <h2>About NotesLab</h2>
-        <p>NotesLab is a platform dedicated to providing high-quality notes and study materials for first-year engineering students. It helps you access departmental notes with ease and enhances your learning experience.</p>
+        <h2 class="section-title fade-in">Why NotesLab?</h2>
+        <p class="fade-in">NotesLab is a community-driven platform dedicated to providing high-quality, verified notes
+            for engineering students. We bridge the gap between classroom learning and exam preparation with simplified,
+            accurate material.</p>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <form action="submit_form.php" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
+        <h2 class="section-title fade-in">Get in Touch</h2>
+        <form action="#" class="contact-form fade-in">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
         </form>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 NotesLab. All rights reserved.</p>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/ashutosh-more-58b21332b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="linkedin">
-                <i class="fab fa-linkedin"></i> Ashutosh More
-            </a>
-        </div>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/raj-singhania-49aa37340?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="linkedin">
-                <i class="fab fa-linkedin"></i> Raj Singhania
-            </a>
-        </div>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/himanshu-chawre-b7221332b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="linkedin">
-                <i class="fab fa-linkedin"></i> Himanshu Chawre
-            </a>
+        <div class="footer-content">
+            <div class="logo">NotesLab.</div>
+            <div class="social-links">
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> Ashutosh More</a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> Raj Singhania</a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> Himanshu Chawre</a>
+            </div>
+            <p class="copyright">&copy; 2025 NotesLab. Built with ❤️ by Ashutosh & Team.</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
